@@ -1,20 +1,14 @@
 Given latitude and longitude box plot a country
 
-for SAS output png graph see
-https://goo.gl/jrjfQU
+Worked perfectly in WPS/Proc R with png, pdf and jpeg output (I only ran SAS with png)
 
-for WPS output graphs (pdf and jpeg)
-http://bit.ly/2FhRkSq
-http://bit.ly/2HWwXIL
-https://github.com/rogerjdeangelis/utl_given_the_latitude_and_longitude_box_plot_a_country/blob/master/utl_given_the_latitude_and_longitude_box_plot_a_country
-
+for WPS/Proc R output graphs (png, pdf and jpeg). All graphs in project.
+  https://goo.gl/jrjfQU
+  http://bit.ly/2FhRkSq
+  http://bit.ly/2HWwXIL
+               
 git project
 https://github.com/rogerjdeangelis/utl_given_the_latitude_and_longitude_box_plot_a_country
-
-I could not get utl_submit_wps64 or the eclipse interative WPS to
-produce the png graph. However WPS produced both pdf and jpeg graphs.
-
-
 
 syackoverflow R
 https://goo.gl/TeKjnf
