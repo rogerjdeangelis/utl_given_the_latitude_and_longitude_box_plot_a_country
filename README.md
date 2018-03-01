@@ -6,6 +6,8 @@ Given the latitude and longitude box plot a country. Keywords: sas sql join merg
     https://goo.gl/jrjfQU
     
     for WPS output graphs (pdf and jpeg)
+    http://bit.ly/2FhRkSq
+    http://bit.ly/2HWwXIL
     https://github.com/rogerjdeangelis/utl_given_the_latitude_and_longitude_box_plot_a_country/blob/master/utl_given_the_latitude_and_longitude_box_plot_a_country
 
     git project
@@ -82,3 +84,52 @@ Given the latitude and longitude box plot a country. Keywords: sas sql join merg
       );
     png();
     ');
+    
+        *wps pdf;
+    %utl_submit_wps64('
+    options set=R_HOME "C:/Program Files/R/R-3.3.2";
+    proc r;
+    submit;
+    source("C:/Program Files/R/R-3.3.2/etc/Rprofile.site", echo=T);
+    library(maps);
+    library(dplyr);
+    library(mapdata);
+    pdf("d:/pdf/utl_given_the_latitude_and_longitude_box_plot_a_country.pdf");
+    maps::map(
+      database = "worldHires",
+      regions = c("uk", "ireland"),
+      xlim = c(-12, 2),
+      ylim = c(49, 59),
+      col = "gray90",
+      fill = TRUE
+      );
+    pdf();
+    endsubmit;
+    run;quit;
+    ');
+
+
+    *wps jpeg;
+    %utl_submit_wps64('
+    options set=R_HOME "C:/Program Files/R/R-3.3.2";
+    proc r;
+    submit;
+    source("C:/Program Files/R/R-3.3.2/etc/Rprofile.site", echo=T);
+    library(maps);
+    library(dplyr);
+    library(mapdata);
+    jpeg("d:/jpg/utl_given_the_latitude_and_longitude_box_plot_a_country.jpg");
+    maps::map(
+      database = "worldHires",
+      regions = c("uk", "ireland"),
+      xlim = c(-12, 2),
+      ylim = c(49, 59),
+      col = "gray90",
+      fill = TRUE
+      );
+    pdf();
+    endsubmit;
+    run;quit;
+    ');
+
+
